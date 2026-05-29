@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f1e1a;
-    --bg2:#14302a;
-    --card:#fbf7ee;
-    --ink:#1d2b27;
-    --muted:#5e6f6a;
-    --accent:#2f7d62;
-    --accent-soft:#e3efe8;
-    --gold:#c79a3d;
-    --line:#e2dccd;
+    --bg:#3a1220;
+    --bg2:#5a1d2e;
+    --card:#fdf6f0;
+    --ink:#2a1a14;
+    --muted:#7a5a52;
+    --accent:#a8324a;
+    --accent-soft:#f7e6e6;
+    --gold:#d9a441;
+    --line:#ecdfd4;
     --radius:18px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -25,7 +25,7 @@
     font-family:'Mulish',sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 80% -10%, #1c4639 0%, transparent 60%),
+      radial-gradient(1200px 600px at 80% -10%, #7a2438 0%, transparent 60%),
       linear-gradient(160deg,var(--bg) 0%, var(--bg2) 100%);
     min-height:100vh;
     padding:32px 16px 64px;
@@ -34,20 +34,15 @@
   .wrap{max-width:680px;margin:0 auto}
   .header{
     text-align:center;
-    color:#f3ede0;
-    margin-bottom:28px;
-  }
-  .header .crest{
-    font-size:34px;letter-spacing:.05em;
-    color:var(--gold);
-    margin-bottom:6px;
+    color:#fbeee2;
+    margin-bottom:24px;
   }
   .header .year{
     display:inline-block;
     font-family:'Mulish';font-weight:700;
     font-size:12px;letter-spacing:.22em;text-transform:uppercase;
     color:var(--gold);
-    border:1px solid rgba(199,154,61,.45);
+    border:1px solid rgba(217,164,65,.5);
     border-radius:999px;
     padding:5px 14px;margin-bottom:16px;
   }
@@ -56,15 +51,33 @@
     font-weight:600;font-size:clamp(24px,5vw,34px);
     line-height:1.15;
   }
-  .header p{color:#aebcb6;margin-top:10px;font-size:15px}
-
+  .header p{color:#e4c4bf;margin-top:10px;font-size:15px}
+ 
+  .banner{
+    background:linear-gradient(135deg,var(--gold) 0%, #c08a2e 100%);
+    color:#3a1d05;
+    border-radius:14px;
+    padding:14px 18px;
+    margin-bottom:24px;
+    text-align:center;
+    box-shadow:0 12px 30px -12px rgba(0,0,0,.5);
+  }
+  .banner .b-title{font-weight:700;font-size:15px;line-height:1.4}
+  .banner .b-phone{
+    display:inline-flex;align-items:center;gap:7px;
+    margin-top:8px;font-weight:700;font-size:17px;
+    color:#3a1d05;text-decoration:none;
+    background:rgba(255,255,255,.4);
+    border-radius:999px;padding:6px 16px;
+  }
+ 
   .card{
     background:var(--card);
     border-radius:var(--radius);
     padding:clamp(20px,4vw,34px);
     box-shadow:0 24px 60px -20px rgba(0,0,0,.55);
   }
-
+ 
   .q{padding:22px 0;border-bottom:1px solid var(--line)}
   .q:first-of-type{padding-top:4px}
   .q-num{
@@ -74,8 +87,7 @@
   }
   .q-text{font-weight:600;font-size:16px;margin-bottom:14px;display:block}
   .req{color:#b9442f}
-
-  /* Likert */
+ 
   .likert{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
   .likert label{
     display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
@@ -89,7 +101,7 @@
   .likert input{position:absolute;opacity:0;pointer-events:none}
   .likert .dot{
     width:22px;height:22px;border-radius:50%;
-    border:2px solid #c2ccc7;flex:none;
+    border:2px solid #d6bdb6;flex:none;
     transition:all .15s ease;
   }
   .likert .lab{font-size:11px;color:var(--muted);font-weight:600;line-height:1.25}
@@ -104,8 +116,7 @@
     background:var(--accent-soft);
   }
   .likert label:has(input:checked) .lab{color:var(--accent)}
-
-  /* text inputs */
+ 
   input[type=tel],textarea{
     width:100%;font-family:inherit;font-size:15px;color:var(--ink);
     border:1px solid var(--line);border-radius:12px;
@@ -114,7 +125,7 @@
   }
   input[type=tel]:focus,textarea:focus{outline:none;border-color:var(--accent)}
   textarea{min-height:110px;resize:vertical}
-
+ 
   .submit{
     width:100%;margin-top:26px;
     font-family:'Mulish';font-weight:700;font-size:16px;letter-spacing:.02em;
@@ -122,10 +133,10 @@
     border:none;border-radius:14px;padding:16px;cursor:pointer;
     transition:transform .12s, background .2s;
   }
-  .submit:hover{background:#266750}
+  .submit:hover{background:#8e2840}
   .submit:active{transform:scale(.99)}
   .submit:disabled{opacity:.6;cursor:not-allowed}
-
+ 
   .thanks{
     display:none;text-align:center;padding:40px 10px;
   }
@@ -137,9 +148,9 @@
   }
   .thanks h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:10px}
   .thanks p{color:var(--muted)}
-
-  .foot{text-align:center;color:#8b9a94;font-size:12px;margin-top:22px}
-
+ 
+  .foot{text-align:center;color:#d3a9a3;font-size:12px;margin-top:22px}
+ 
   @media(max-width:480px){
     .likert{grid-template-columns:repeat(5,1fr);gap:5px}
     .likert label{padding:10px 3px;min-height:96px}
@@ -154,38 +165,43 @@
     <h1>Eryaman Kurban Organizasyonu</h1>
     <p>Görüşleriniz hizmetlerimizi geliştirmemiz için çok değerli.</p>
   </div>
-
+ 
+  <div class="banner">
+    <div class="b-title">Yıl boyu bağış ve kurban hizmetimiz devam etmektedir.</div>
+    <a class="b-phone" href="tel:+905524990211">📞 +90 552 499 02 11</a>
+  </div>
+ 
   <div class="card">
     <form id="surveyForm">
       <div id="questions"></div>
-
+ 
       <div class="q" style="border-bottom:none">
         <label class="q-text"><span class="q-num">7.</span>Kurbanınızı 2027 yılında bizimle kesmek istiyorsanız sizi aramamız için telefonunuzu yazar mısınız?</label>
         <input type="tel" name="telefon" placeholder="05XX XXX XX XX" autocomplete="tel">
       </div>
-
+ 
       <div class="q" style="border-bottom:none;padding-top:0">
         <label class="q-text"><span class="q-num">8.</span>Teklif ve önerilerinizi bizimle paylaşır mısınız?</label>
         <textarea name="oneriler" placeholder="Görüş, teklif ve önerileriniz..."></textarea>
       </div>
-
+ 
       <button type="submit" class="submit" id="submitBtn">Anketi Gönder</button>
     </form>
-
+ 
     <div class="thanks" id="thanks">
       <div class="check">✓</div>
       <h2>Teşekkür ederiz</h2>
       <p>Vakit ayırarak anketimizi doldurduğunuz için teşekkür ederiz.</p>
+      <button type="button" class="submit" onclick="location.reload()" style="max-width:280px;margin:24px auto 0">Yeni Anket Başlat</button>
     </div>
   </div>
-
+ 
   <div class="foot">Eryaman Kurban Organizasyonu · 2026</div>
 </div>
-
+ 
 <script>
-  // ⬇️ Apps Script web app URL'sini buraya yapıştır
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3XXKqHhbklEbsoN2yH5JiBztQrClQOa7hi2D3FiIt4A3fZBNwF-3D4iljUazKM6XwYw/exec";
-
+ 
   const likertQuestions = [
     "Kurban organizasyonumuzdan memnun musunuz?",
     "Bilgilendirme ve takip sistemimizden memnun musunuz?",
@@ -201,7 +217,7 @@
     "Katılıyorum",
     "Kesinlikle Katılıyorum"
   ];
-
+ 
   const qContainer = document.getElementById('questions');
   likertQuestions.forEach((q, i) => {
     const name = "soru" + (i + 1);
@@ -219,18 +235,18 @@
         <div class="likert">${opts}</div>
       </div>`);
   });
-
+ 
   const form = document.getElementById('surveyForm');
   const btn = document.getElementById('submitBtn');
-
+ 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     btn.disabled = true;
     btn.textContent = "Gönderiliyor...";
-
+ 
     const data = {};
     new FormData(form).forEach((v, k) => data[k] = v);
-
+ 
     try {
       await fetch(SCRIPT_URL, {
         method: "POST",
